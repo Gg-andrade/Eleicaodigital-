@@ -1,0 +1,226 @@
+/* style.css */
+:root {
+    --cor-esquerda: #c0392b; /* Vermelho */
+    --cor-direita: #2980b9;  /* Azul */
+    --cor-fundo: #2c3e50;    /* Azul muito escuro */
+    --cor-texto: #ecf0f1;    /* Cinza claro */
+    --cor-destaque: #f1c40f; /* Amarelo */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #34495e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #4a6572;
+}
+
+.timer {
+    background-color: var(--cor-destaque);
+    color: #2c3e50;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.destaque {
+    color: var(--cor-destaque);
+}
+
+/* Placar */
+.placar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #4a6572;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.coluna-esquerda, .coluna-direita {
+    text-align: center;
+    flex: 1;
+}
+
+.coluna-esquerda h2 {
+    color: var(--cor-esquerda);
+}
+
+.coluna-direita h2 {
+    color: var(--cor-direita);
+}
+
+.votos {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+#votos-esquerda {
+    color: var(--cor-esquerda);
+}
+
+#votos-direita {
+    color: var(--cor-direita);
+}
+
+.divisoria {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 20px;
+    color: var(--cor-destaque);
+}
+
+/* Urna / Botões de Voto */
+.urna {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.urna p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.botoes-urna {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.botao-esquerda {
+    background-color: var(--cor-esquerda);
+    color: white;
+}
+
+.botao-direita {
+    background-color: var(--cor-direita);
+    color: white;
+}
+
+.numero-urna {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Propaganda */
+.propaganda {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.propaganda-esquerda, .propaganda-direita {
+    flex: 1;
+    background-color: #4a6572;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.propaganda h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.destaque-esquerda {
+    color: var(--cor-esquerda);
+    font-weight: bold;
+}
+
+.destaque-direita {
+    color: var(--cor-direita);
+    font-weight: bold;
+}
+
+.propaganda ul {
+    list-style-type: none;
+}
+
+.propaganda li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #4a6572;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    .botoes-urna, .propaganda, .placar {
+        flex-direction: column;
+    }
+
+    .placar {
+        flex-direction: row; /* O placar mantém a linha mesmo no mobile */
+    }
+
+    .botao {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .divisoria {
+        margin: 10px 0;
+    }
+}
